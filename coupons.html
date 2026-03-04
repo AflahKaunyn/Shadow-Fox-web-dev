@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUPHORIA — Exclusive Coupons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo" onclick="location.href='index.html'" style="cursor: pointer;">EUPHORIA.</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Shop</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="display:flex; align-items:center; gap:15px; margin-bottom: 30px;">
+            <button onclick="location.href='profile.html'" class="btn-secondary" style="padding: 5px 10px;">&larr;
+                Back</button>
+            <h2 style="margin:0">Coupons</h2>
+        </div>
+
+        <!-- Using same container but for coupons structure -->
+        <div class="coupons-grid">
+            <!-- Coupon 1 -->
+            <div class="coupon-card">
+                <div class="coupon-left">
+                    <span class="coupon-off">₹500 OFF</span>
+                    <p>On orders above ₹2000</p>
+                </div>
+                <div class="coupon-right">
+                    <span class="code">SAVE500</span>
+                    <button class="btn-copy" onclick="copyCode('SAVE500')">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Coupon 2 -->
+            <div class="coupon-card">
+                <div class="coupon-left">
+                    <span class="coupon-off">15% OFF</span>
+                    <p>Flat discount on Ethnic Wear</p>
+                </div>
+                <div class="coupon-right">
+                    <span class="code">ETHNIC15</span>
+                    <button class="btn-copy" onclick="copyCode('ETHNIC15')">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Coupon 3 -->
+            <div class="coupon-card">
+                <div class="coupon-left">
+                    <span class="coupon-off">FREE SHIPPING</span>
+                    <p>On your first order</p>
+                </div>
+                <div class="coupon-right">
+                    <span class="code">FREESHIP</span>
+                    <button class="btn-copy" onclick="copyCode('FREESHIP')">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Coupon 4 -->
+            <div class="coupon-card">
+                <div class="coupon-left">
+                    <span class="coupon-off">BUY 1 GET 1</span>
+                    <p>On select accessories</p>
+                </div>
+                <div class="coupon-right">
+                    <span class="code">BOGOACC</span>
+                    <button class="btn-copy" onclick="copyCode('BOGOACC')">Copy Code</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 EUPHORIA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyCode(code) {
+            navigator.clipboard.writeText(code);
+            alert("Coupon code " + code + " copied to clipboard!");
+        }
+    </script>
+</body>
+
+</html>

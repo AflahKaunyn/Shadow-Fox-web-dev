@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUPHORIA — Fashion Redefined</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">EUPHORIA.</div>
+
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Cart (0)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="subtitle">Spring Collection 2025</span>
+      <h1>The Art of Dressing.</h1>
+      <p>Discover the new standard of luxury and comfort.</p>
+      <div class="hero-buttons">
+        <button id="homeSearchBtn" class="btn">Shop Now</button>
+      </div>
+
+      <!-- Search embedded elegantly -->
+      <div class="hero-search-wrapper">
+        <input id="homeSearch" type="text" placeholder="Search curated styles..." />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('homeSearch').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const term = e.target.value.trim();
+        if (term) location.href = `products.html?search=${encodeURIComponent(term)}`;
+      }
+    });
+    document.getElementById('homeSearchBtn').addEventListener('click', () => {
+      location.href = `products.html`;
+    });
+  </script>
+
+  <section class="categories">
+    <div class="section-header">
+      <h2>Shop by Category</h2>
+      <p>Essentials for every occasion</p>
+    </div>
+    <div class="category-grid" id="catGrid"></div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 EUPHORIA. All rights reserved.</p>
+      <div class="socials">
+        <span>Instagram</span>
+        <span>Twitter</span>
+        <span>Pinterest</span>
+      </div>
+    </div>
+  </footer>
+  <!--
+  <script>
+    const categories = ["Festive","Casual","Bottom Wear","Tops","Kurtis/Kurtas","Western Wear","Suits"];
+    const grid=document.getElementById('catGrid');
+    categories.forEach(c=>{
+      const div=document.createElement('div');
+      div.className='cat-card';
+      div.textContent=c;
+      div.onclick=()=>location.href=`products.html?category=${encodeURIComponent(c)}`;
+      grid.appendChild(div);
+    });
+  </script>
+
+-->
+  <script>
+    const categories = [
+      { name: "Festive", img: "static/images/festive.jpg" },
+      { name: "Casual", img: "static/images/casual.jpg" },
+      { name: "Bottom Wear", img: "static/images/bottomwear.jpg" },
+      { name: "Tops", img: "static/images/tops.jpg" },
+      { name: "Kurtis/Kurtas", img: "static/images/kurtas.jpg" },
+      { name: "Western Wear", img: "static/images/western.jpg" },
+      { name: "Suits", img: "static/images/suits.jpg" }
+    ];
+
+    const grid = document.getElementById('catGrid');
+
+    categories.forEach(c => {
+      const div = document.createElement('div');
+      div.className = 'cat-card';
+
+      div.innerHTML = `
+      <img src="${c.img}" alt="${c.name}">
+      <h3>${c.name}</h3>
+    `;
+
+      div.onclick = () => location.href = `products.html?category=${encodeURIComponent(c.name)}`;
+      grid.appendChild(div);
+    });
+  </script>
+
+
+</body>
+
+</html>
